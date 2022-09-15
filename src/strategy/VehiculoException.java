@@ -4,8 +4,6 @@ package strategy;
 
 /**
  * @author danio
- * @See VehiculoNotFoundException
- * @See VehiculoRegusteredException
  * Clase padre excepciones personalizadas para Vehiculo
  */
 public class VehiculoException extends Exception{

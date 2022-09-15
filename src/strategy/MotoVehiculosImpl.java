@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * @author danio
- * @See class Vehiculo
  * @since 14/09/2022
  * Clase de entidad
  */
