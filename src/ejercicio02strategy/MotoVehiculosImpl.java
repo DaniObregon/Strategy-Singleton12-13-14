@@ -1,43 +1,39 @@
-package strategy;
+package ejercicio02strategy;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author danio
- * @See class Vehiculo
  * @since 14/09/2022
  * Clase de entidad
  */
-public class CocheVehiculosImpl extends Vehiculo implements Vehiculos {
-    private List<Vehiculo> listaCoches = new ArrayList();
-    int nPuertas;
-    double cc;
+public class MotoVehiculosImpl extends Vehiculo implements Vehiculos {
+    private List<Vehiculo> listaMotos = new ArrayList();
+    double dCc;
 
-    public CocheVehiculosImpl() {
+    public MotoVehiculosImpl() {
     }
 
-    public CocheVehiculosImpl(int iId, String marca, String modelo, double precio, int nPuertas, double cc) {
-        super(iId, marca, modelo, precio);
-        this.nPuertas = nPuertas;
-        this.cc = cc;
+    public MotoVehiculosImpl(int iId, String sMarca, String sModelo, double dPrecio, double dCc) {
+        super(iId, sMarca, sModelo, dPrecio);
+        this.dCc = dCc;
     }
 
     /**
      * Añade un nuevo vehículo a la lista de tipo Vehiculo
      * @param vehiculo objeto a añadir a la lista
      * @throws VehiculoRegisteredException
-     * @since 14/09/2022
      */
     @Override
     public void save(Vehiculo vehiculo) throws VehiculoRegisteredException {
-        if (listaCoches.isEmpty()) listaCoches.add(vehiculo);
+        if (listaMotos.isEmpty()) listaMotos.add(vehiculo);
         else {
-            for (Vehiculo v : listaCoches) {
+            for (Vehiculo v : listaMotos) {
                 if (vehiculo.iId == v.iId) {
                     throw new VehiculoRegisteredException("Registered vehicle: " + v.toString());
                 }
-                listaCoches.add(vehiculo);
+                listaMotos.add(vehiculo);
                 break;
             }
         }
@@ -50,20 +46,19 @@ public class CocheVehiculosImpl extends Vehiculo implements Vehiculos {
      */
     @Override
     public List<Vehiculo> findAll() {
-        return listaCoches;
+        return listaMotos;
     }
 
     /**
      * Elimina un Vehiculo existente en la lista motos
      * @param vehiculo
      * @throws VehiculoNotFoundException si el Vehiculo no se encuentra en la lista
-     * @since 14/09/2022
      */
     @Override
     public void delete(Vehiculo vehiculo) throws VehiculoNotFoundException {
-        if(!listaCoches.isEmpty()){
-            for(Vehiculo v: listaCoches){
-                if(vehiculo.iId == v.iId) listaCoches.remove(vehiculo);
+        if(!listaMotos.isEmpty()){
+            for(Vehiculo v: listaMotos){
+                if(vehiculo.iId == v.iId) listaMotos.remove(vehiculo);
                 break;
             }
             throw new VehiculoNotFoundException("Vehicle not found " + vehiculo.toString());
@@ -72,10 +67,9 @@ public class CocheVehiculosImpl extends Vehiculo implements Vehiculos {
 
     @Override
     public String toString() {
-        return "CocheVehiculosImpl{" +
+        return "MotoVehiculosImpl{" +
                 "ID=" + iId +
-                ", nPuertas=" + nPuertas +
-                ", cc=" + cc +
+                ", Cc=" + dCc +
                 ", marca='" + sMarca + '\'' +
                 ", modelo='" + sModelo + '\'' +
                 ", precio=" + dPrecio +

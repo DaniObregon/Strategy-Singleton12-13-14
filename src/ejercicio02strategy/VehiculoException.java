@@ -1,4 +1,4 @@
-package strategy;
+package ejercicio02strategy;
 
 //TODO: Agregar excepcion personalizada y excepcion especifica
 

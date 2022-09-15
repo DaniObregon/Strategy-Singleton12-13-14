@@ -1,4 +1,4 @@
-package strategy;
+package ejercicio02strategy;
 
 import java.util.List;
 

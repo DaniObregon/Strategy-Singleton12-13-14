@@ -1,5 +1,4 @@
-package strategy;
-
+package ejercicio02strategy;
 /**
  * @author danio
  * Clase de excepcion Vehiculo no encontrado

@@ -1,4 +1,4 @@
-package strategy;
+package ejercicio02strategy;
 
 /**
  * @author danio
