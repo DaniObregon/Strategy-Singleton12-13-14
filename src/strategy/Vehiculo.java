@@ -4,11 +4,9 @@ package strategy;
 
 /**
  * Clase de entidad Vehiculo
- * @param sMarca
- * @param sModelo
- * @param dPrecio
  */
 public abstract class Vehiculo {
+    int iId;
     String sMarca;
     String sModelo;
     double dPrecio;
@@ -16,7 +14,8 @@ public abstract class Vehiculo {
     public Vehiculo() {
     }
 
-    public Vehiculo(String sMarca, String sModelo, double Precio) {
+    public Vehiculo(int iId, String sMarca, String sModelo, double Precio) {
+        this.iId = iId;
         this.sMarca = sMarca;
         this.sModelo = sModelo;
         this.dPrecio = Precio;

@@ -4,14 +4,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
         Vehiculos ivCoche = new CocheVehiculosImpl();
         Vehiculos ivMoto = new MotoVehiculosImpl();
 
-        crear(ivMoto, new MotoVehiculosImpl("Honda", "R1", 10000, 600));
-        crear(ivMoto, new MotoVehiculosImpl("Honda", "R1", 10000, 600));
-//        crear(ivMoto, new MotoVehiculosImpl("Yamaha", "Tornado", 3000, 250));
-//        crear(ivCoche, new CocheVehiculosImpl("Toyota", "Raize", 10000, 5, 1000));
-//        crear(ivCoche, new CocheVehiculosImpl("VW", "Scirocco", 15000, 3, 1800));
+        crear(ivMoto, new MotoVehiculosImpl(1, "Honda", "R1", 10000, 600));
+        crear(ivMoto, new MotoVehiculosImpl(2, "Honda", "R1", 10000, 600));
+        crear(ivMoto, new MotoVehiculosImpl(3,"Yamaha", "Tornado", 3000, 250));
+        crear(ivCoche, new CocheVehiculosImpl(1, "Toyota", "Raize", 10000, 5, 1000));
+        crear(ivCoche, new CocheVehiculosImpl(2, "VW", "Scirocco", 15000, 3, 1800));
 
         for (Vehiculo v : listar(ivCoche)) {
             System.out.println("v = " + v);
@@ -27,19 +28,10 @@ public class Main {
         } catch (VehiculoRegisteredException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-
     }
 
     public static List<Vehiculo> listar(Vehiculos vehiculos) {
         return vehiculos.findAll();
-    }
-
-    public static void eliminar(Vehiculos vehiculos, Vehiculo vehiculo) {
-        try {
-            vehiculos.delete(vehiculo);
-        } catch (VehiculoNotFoundException e) {
-            System.out.println("ERROR: " + e.getMessage());
-        }
     }
 }
 /**
