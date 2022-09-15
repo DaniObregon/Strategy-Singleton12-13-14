@@ -3,7 +3,9 @@ package strategy;
 //TODO: añadir clase de excepciones
 
 /**
- * Clase de entidad Vehiculo
+ * Clase de entidad Vehiculo abstract
+ * @author danio
+ * @since 15/09/2022
  */
 public abstract class Vehiculo {
     int iId;

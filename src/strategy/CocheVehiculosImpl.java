@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clase de entidad
+ * @author danio
  * @See class Vehiculo
  * @since 14/09/2022
+ * Clase de entidad
  */
 public class CocheVehiculosImpl extends Vehiculo implements Vehiculos {
     private List<Vehiculo> listaCoches = new ArrayList();

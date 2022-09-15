@@ -1,10 +1,17 @@
 package strategy;
 
 import java.util.List;
+/**
+ * @author danio
+ * @since 15/09/2022
+ * Se modificaron variables para implementar notación húngara.
+ * Se agregaron clases de Excepciones personalizadas:
+ * VehiculoException, VehiculoNotFoundException, VehiculoRegisteredException.
+ * Se realizan pruebas de ejecuci[on de los metodos.
+ */
 
 public class Main {
     public static void main(String[] args) {
-
         Vehiculos ivCoche = new CocheVehiculosImpl();
         Vehiculos ivMoto = new MotoVehiculosImpl();
 
@@ -34,8 +41,3 @@ public class Main {
         return vehiculos.findAll();
     }
 }
-/**
- * Se modificaron variables para implementar notación húngara.
- * Se agregaron clases de Excepciones personalizadas:
- * VehiculoException, VehiculoNotFoundException, VehiculoRegisteredException
- */
